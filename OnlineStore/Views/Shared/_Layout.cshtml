@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html" ; charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Aarambh - Vocal For Local</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    
+        <!-- Basic -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Mobile Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <!-- Site Metas -->
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+
+        <title>Tropiko</title>
+
+        <!-- slider stylesheet -->
+        <link rel="stylesheet" type="text/css"
+              href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
+
+        <!-- bootstrap core css -->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+        <!-- fonts style -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet" />
+        <!-- Custom styles for this template -->
+        <link href="css/style.css" rel="stylesheet" />
+        <!-- responsive style -->
+        <link href="css/responsive.css" rel="stylesheet" />
+    
+</head>
+
+<body>
+    <header class="header_section">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
+                <a class="navbar-brand" href="index.html">
+                    <img src="images/logo.png" alt="" /><span>
+                        Aarambh
+                    </span>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                        <ul class="navbar-nav">
+                            @if (User.Identity.IsAuthenticated)
+                            {
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Info">Account</a>
+                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Logout">Logout</a>
+                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link text-dark" asp-controller="ShoppingCart" asp-action="Index">
+                                                        <svg id="i-cart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="none" stroke="currentcolor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                                            <path d="M6 6 L30 6 27 19 9 19 M27 23 L10 23 5 2 2 2" />
+                                                            <circle cx="25" cy="27" r="2" />
+                                                            <circle cx="12" cy="27" r="2" />
+                                                        </svg>
+                                                    </a>
+                                                </li>
+ }
+                                            else
+                                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                                </li>
+                                   <li class="nav-item">
+                                                    <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                                                </li>
+}
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                            <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                        </form>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <!--<div>-->
+        <!-- contact section -->
+        <!--<section class="contact_section layout_padding">
+            <div class="container">
+                <h2 class="font-weight-bold">
+                    Contact Us
+                </h2>
+                <div class="row">
+                    <div class="col-md-8 mr-auto">
+                        <form action="">
+                            <div class="contact_form-container">
+                                <div>
+                                    <div>
+                                        <input type="text" placeholder="Name">
+                                    </div>
+                                    <div>
+                                        <input type="text" placeholder="Phone Number">
+                                    </div>
+                                    <div>
+                                        <input type="email" placeholder="Email">
+                                    </div>
+
+                                    <div class="mt-5">
+                                        <input type="text" placeholder="Message">
+                                    </div>
+                                    <div class="mt-5">
+                                        <button type="submit">
+                                            send
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+        <!-- end contact section -->
+    @*</div>*@
+    <footer>
+        <section class="container-fluid footer_section text-muted">
+            <p>
+                Copyright &copy; 2022 All Rights Reserved By
+                Aarambh - Vocal For Local
+            </p>
+        </section>
+    </footer>
+        @*<footer class="border-top footer text-muted">
+                <div class="container">
+                    &copy; 2022 -  Aarambh - Vocal For Local - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+            </footer>*@
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+        @RenderSection("Scripts", required: false)
+</body>
+</html>
